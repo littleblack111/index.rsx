@@ -1,0 +1,36 @@
+[package]
+name = "littleblack111-rsx"
+version = "0.1.0"
+authors = ["littleblack111 <littleblack11111@gmail.com>"]
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dioxus = { version = "0.7.0", features = ["router", "fullstack"] }
+dioxus-motion = { git = "https://github.com/littleblack111/dioxus-motion.git", branch = "main", default-features = false, optional = true }
+
+[features]
+default = ["web"]
+motion = []
+web = [
+	"dioxus/web",
+	"dep:dioxus-motion",
+	"dioxus-motion/web",
+	"dioxus-motion/transitions",
+	"motion",
+]
+desktop = [
+	"dep:dioxus-motion",
+	"dioxus/desktop",
+	"dioxus-motion/desktop",
+	"dioxus-motion/transitions",
+	"motion",
+]
+mobile = [
+	"dioxus/mobile",
+	"dioxus-motion/desktop",
+	"dioxus-motion/transitions",
+	"motion",
+]
+server = ["dioxus/server"]
