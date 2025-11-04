@@ -12,8 +12,9 @@ pub fn Hero() -> Element {
             // After all attributes are defined, we can define child elements and components
             img { src: HEADER_SVG, id: "header" }
             div { id: "links",
+                class: "h-full",
                 // The RSX macro also supports text nodes surrounded by quotes
-                a { href: "https://dioxuslabs.com/learn/0.6/", "📚 Learn Dioxus" }
+                a { class: "w-full", href: "https://dioxuslabs.com/learn/0.6/", "📚 Learn Dioxus" }
                 a { href: "https://dioxuslabs.com/awesome", "🚀 Awesome Dioxus" }
                 a { href: "https://github.com/dioxus-community/", "📡 Community Libraries" }
                 a { href: "https://github.com/DioxusLabs/sdk", "⚙️ Dioxus Development Kit" }
