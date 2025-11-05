@@ -13,15 +13,18 @@ mod views;
 pub enum Route {
     #[layout(Navbar)]
         #[route("/")]
-        #[cfg_attr(feature = "motion", transition(ZoomIn))]
+        #[cfg_attr(feature = "motion", transition(SlideRight))]
         Home {},
         #[route("/ghrepos")]
+        #[cfg_attr(feature = "motion", transition(SlideLeft))]
         GhRepos { },
 }
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
+const IOSEVKA_FONT: Asset = asset!("/assets/fonts/Iosevka.ttf");
+const INTER_FONT: Asset = asset!("/assets/fonts/Inter.ttf");
 
 fn main() {
     dioxus::launch(App);
@@ -33,6 +36,8 @@ fn App() -> Element {
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
+        document::Link { rel: "font", href: IOSEVKA_FONT }
+        document::Link { rel: "font", href: INTER_FONT }
 
         Router::<Route> {}
     }

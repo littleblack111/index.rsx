@@ -9,3 +9,6 @@ pub use hero::Hero;
 
 mod echo;
 pub use echo::Echo;
+
+mod route_outlet;
+pub use route_outlet::RoutesOutlet;

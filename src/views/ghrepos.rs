@@ -18,6 +18,7 @@ pub fn GhRepos() -> Element {
             id: "blog",
 
             // Content
+            p {"a"}
 
             // Navigation links
             // The `Link` component lets us link to other routes inside our app. It takes a `to` prop of type `Route` and
