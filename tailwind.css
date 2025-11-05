@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+:root {
+	--color-theme-bg-black: #05010d
+}
+
 @theme {
-	--color-theme-bg-black: #05010d,
+	--color-theme-bg-black: var(--color-theme-bg-black),
+		--font-sans: "Iosevka", "Inter"
 }
